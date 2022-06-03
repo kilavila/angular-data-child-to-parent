@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'passing-data-between-components';
+
+  displayedText: string = 'Change me';
+
+  onSubmit(eventData: { text: string }): void {
+    console.log(eventData);
+    this.displayedText = eventData.text;
+  }
+
 }
