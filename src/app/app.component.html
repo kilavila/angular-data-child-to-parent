@@ -1,5 +1,17 @@
-<app-child (result)=onSubmit($event)></app-child>
+<form [formGroup]="newsletterForm" (ngSubmit)="onFormSubmit()">
+  <h1>Newsletter signup</h1>
+  <span>Name: </span>
+  <app-child (result)=onNameChange($event)></app-child>
+  <br>
+  <br>
+  <span>Email: </span>
+  <app-child (result)=onEmailChange($event)></app-child>
+  <br>
+  <br>
+  <button type="submit">Sign up</button>
+</form>
 
-<p>
-  {{ displayedText }}
-</p>
+<br>
+
+{{ newsletterForm.value.name }}
+{{ newsletterForm.value.email }}
